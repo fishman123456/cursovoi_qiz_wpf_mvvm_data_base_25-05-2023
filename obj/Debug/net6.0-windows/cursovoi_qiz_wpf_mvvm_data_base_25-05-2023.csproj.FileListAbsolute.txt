@@ -64,3 +64,5 @@ C:\Users\Fishman_1\Documents\GitHub\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023\o
 C:\Users\Fishman_1\Documents\GitHub\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023\obj\Debug\net6.0-windows\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023.pdb
 C:\Users\Fishman_1\Documents\GitHub\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023\obj\Debug\net6.0-windows\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023.genruntimeconfig.cache
 C:\Users\Fishman_1\Documents\GitHub\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023\obj\Debug\net6.0-windows\ref\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023.dll
+C:\Users\Fishman_1\Documents\GitHub\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023\obj\Debug\net6.0-windows\Window1.g.cs
+C:\Users\Fishman_1\Documents\GitHub\cursovoi_qiz_wpf_mvvm_data_base_25-05-2023\obj\Debug\net6.0-windows\Window1.baml
