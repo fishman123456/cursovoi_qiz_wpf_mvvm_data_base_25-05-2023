@@ -37,7 +37,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Button.RenderTransform>
-                <Button Content="Button"/>
+                <Button Content="-" IsDefault="True"/>
             </Button>
             <Button Command="{Binding SyncDb}" RenderTransformOrigin="0.5,0.5" Width="91">synchronize</Button>
 
@@ -47,6 +47,10 @@
             <TextBlock Text="Выбранный элемент"  />
             <TextBlock Text="Собака" />
             <TextBox Text="{Binding DogName, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="правильно \ неправильно"  />
+            <TextBox Text="{Binding ansver, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="номер"  />
+            <TextBox Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
     </Grid>
 </Window>

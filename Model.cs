@@ -33,7 +33,7 @@ namespace MVVMENTITY
     public class Dog : INotifyPropertyChanged // собак храним в бд и отображаем пользователю
     {
         public int Id { get; set; } //  Id необходим для соханения его в бд
-        public bool ansver { get; set; } // верно / неверно - значение правильно /  не правильно
+        public bool ansver { get; set; } = false;// верно / неверно - значение правильно /  не правильно
         public string dogName = "Unnamed";//  Свойство - значение будет занимать ячейку в столбике dogName
         public string DogName 
         {
