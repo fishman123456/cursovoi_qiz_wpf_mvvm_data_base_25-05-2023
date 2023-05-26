@@ -19,12 +19,12 @@ namespace MVVMENTITY
     {
         public View()
         {
-           
-            InitializeComponent();
-            DataContext = new ViewModel();
-            //InitializeComponent();
             Window1 bWin = new Window1();
             bWin.Show();
+            //InitializeComponent();
+            DataContext = new ViewModel();
+            InitializeComponent();
+
             //bWin.Owner = this;
             //bWin.Show();
         }

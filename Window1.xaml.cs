@@ -21,6 +21,7 @@ namespace MVVMENTITY
     {
         public Window1()
         {
+            DataContext = new ViewModel();
             InitializeComponent();
         }
     }
