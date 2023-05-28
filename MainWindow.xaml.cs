@@ -17,13 +17,20 @@ namespace MVVMENTITY
 {
     public partial class View : Window
     {
+        //ViewModel viewModel;
+        Window1 window;
+        public static bool OpenWin2 = false;
         public View()
         {
-
             DataContext = new ViewModel();
+            OpenWin2 = true;
+            InitializeComponent();
+            if (Window1.OpenWin1 ==false )
+            {
+                Window1 window1 = new Window1();
+                window1.Show();
+            }
 
-            Window1 window1 = new Window1();
-            window1.Show();
         }
     }
 }

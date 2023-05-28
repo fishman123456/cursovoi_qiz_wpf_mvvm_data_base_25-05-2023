@@ -19,16 +19,21 @@ namespace MVVMENTITY
     /// </summary>
     public partial class Window1 : Window
     {
+        public static bool OpenWin1 = false;
         public Window1()
         {
             DataContext = new ViewModel();
             InitializeComponent();
-           
+            OpenWin1 = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            //if (View.OpenWin2 == false)
+            //{
+               View view = new View();
+               view.Show();
+            //}
         }
     }
 }

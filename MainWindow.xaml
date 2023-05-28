@@ -1,9 +1,11 @@
-﻿<Window x:Class="MVVMENTITY.View"
+﻿<Window 
+        x:Class="MVVMENTITY.View"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MVVMENTITY"
+        xmlns:local="clr-namespace:cursovoi_qiz_wpf_mvvm_data_base_25_05_2023"
+        xmlns:local1="clr-namespace:MVVMENTITY"
         mc:Ignorable="d"
         Title="View" Height="450" Width="800" WindowStartupLocation="CenterScreen">
 
