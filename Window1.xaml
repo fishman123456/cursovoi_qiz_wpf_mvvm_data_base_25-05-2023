@@ -36,11 +36,11 @@
         </Grid.ColumnDefinitions>
         <Image   Stretch="Fill" Source="/water.png" Grid.ColumnSpan="10" Grid.RowSpan="12"/>
         <ListBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="6" ItemsSource="{Binding Dogs}"
-                 SelectedItem="{Binding SelectedDog}">
+                 SelectedItem="{Binding SelectedDog}" ToolTip="Выберите ответ" Cursor="Hand">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">
-                        <TextBlock FontSize="18" Text="{Binding Path=DogName}" />
+                        <TextBlock x:Name="list" FontSize="18" Text="{Binding Path=DogName}" Focusable="True" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
