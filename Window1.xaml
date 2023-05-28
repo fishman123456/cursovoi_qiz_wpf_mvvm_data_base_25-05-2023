@@ -1,15 +1,39 @@
-﻿<Window
+﻿<Window  x:Class="MVVMENTITY.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cursovoi_qiz_wpf_mvvm_data_base_25_05_2023"
-        xmlns:local1="clr-namespace:MVVMENTITY" x:Class="MVVMENTITY.Window1"
+        xmlns:local1="clr-namespace:MVVMENTITY"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800" WindowStartupLocation="CenterScreen" FontSize="10">
-    <Grid Margin="0,0,400,186">
-        <Image   Stretch="Fill" Source="/water.png" Margin="0,0,-400,-200"/>
-        <ListBox Grid.Column="0" Margin="50" ItemsSource="{Binding Dogs}"
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Image   Stretch="Fill" Source="/water.png" Grid.ColumnSpan="10" Grid.RowSpan="10"/>
+        <ListBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" ItemsSource="{Binding Dogs}"
                  SelectedItem="{Binding SelectedDog}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -19,7 +43,19 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="принять выбранный  ответ" FontSize="18" Margin="50,347,50,-160"/>
-       
+        <Button Content="принять выбранный  ответ" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="8" 
+                Command="{Binding CloseWinOne }" FontSize="18" Click="Button_Click"/>
+        <TextBlock Text="Собака" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="3" FontSize="18" 
+                    Background="LightGray"/>
+        <TextBlock Text="Вопрос" Grid.Row="1"  Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" 
+                    Background="LightGray"/>
+        <TextBlock Text="Ответ" Grid.Row="5"  Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" 
+                    Background="LightGray"/>
+        <TextBox DataContext="{Binding SelectedDog}" 
+                     Text="{Binding question, UpdateSourceTrigger=PropertyChanged}" 
+                 Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="3"  FontSize="18"/>
+        <TextBox DataContext="{Binding SelectedDog}" 
+                     Text="{Binding ansver, UpdateSourceTrigger=PropertyChanged}" 
+                 Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="3"  FontSize="18"/>
     </Grid>
 </Window>

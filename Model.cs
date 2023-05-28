@@ -14,7 +14,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-
+using System.Windows;
 
 namespace MVVMENTITY
 {
@@ -33,7 +33,9 @@ namespace MVVMENTITY
     public class Dog : INotifyPropertyChanged // собак храним в бд и отображаем пользователю
     {
         public int Id { get; set; } //  Id необходим для соханения его в бд
-        public bool ansver { get; set; } = false;// верно / неверно - значение правильно /  не правильно
+        public string ansver { get; set; } = "Ответ - на вопрос"; // ответ
+        public  string question { get; set; } = "Вопрос - на который надо отвечать"; // вопрос
+
         public string dogName = "Unnamed";//  Свойство - значение будет занимать ячейку в столбике dogName
         public string DogName 
         {
@@ -52,6 +54,7 @@ namespace MVVMENTITY
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
+      
     }
 
 
@@ -87,10 +90,10 @@ namespace MVVMENTITY
         public void Dogs_sync() // Сохраняем изменения в бд
         {
             this.db.SaveChanges();
-            Debug.WriteLine("Объекты сохранены");
+           //MessageBox.Show("Объекты сохранены");
             OnPropertyChanged("Dogs");// уведомляем отображение о изменении 
         }
-
+       
 
         public Model()
         {   
@@ -98,8 +101,14 @@ namespace MVVMENTITY
             this.AssembleNewDogs();
             Debug.WriteLine("Объектов в базе данных: "+this.db.Dogs.ToList<Dog>().Count.ToString());
         }
+        // мои команды закрыть окно
+        public void  CloseWin()
+        {
+            MessageBox.Show("работает команда");
+            string focuswin = Window1.FocusableProperty.ToString();
+            OnPropertyChanged("Win");
+        }
 
-        
         public event PropertyChangedEventHandler PropertyChanged;// событие для уведомления вида пользователя
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

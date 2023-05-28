@@ -33,7 +33,7 @@
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
                         <SkewTransform/>
-                        <RotateTransform/>
+                        <!--RotateTransform/-->
                         <TranslateTransform/>
                     </TransformGroup>
                 </Button.RenderTransform>
@@ -47,9 +47,11 @@
             <TextBlock Text="Выбранный элемент"  />
             <TextBlock Text="Собака" />
             <TextBox Text="{Binding DogName, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="правильно \ неправильно"  />
+            <TextBlock Text="Вопрос"  />
+            <TextBox Text="{Binding question, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Ответ"  />
             <TextBox Text="{Binding ansver, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="номер"  />
+            <TextBlock Text="Номер"  />
             <TextBox Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
     </Grid>

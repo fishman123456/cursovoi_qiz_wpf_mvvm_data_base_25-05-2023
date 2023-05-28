@@ -21,6 +21,7 @@ namespace MVVMENTITY
     {
         private Dog selectedDog; // объект собаки, что сейчас активна
         Model model; // объект модели
+        private string Win = "первая команда"; // строка для моей комманды
 
         public ViewModel() // конструктор
         {
@@ -95,8 +96,24 @@ namespace MVVMENTITY
                   }));
             }
         }
-
-
+        // мои команды закритие окна
+        private Command closeWinOne;
+        public Command CloseWinOne 
+        {
+            get
+            {
+                return closeWinOne ??
+                    (closeWinOne = new Command(obj =>
+                {
+                    this.model.CloseWin ();
+                    OnPropertyChanged("WinOne");
+                }));
+                  
+               
+            }
+            
+                   
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
