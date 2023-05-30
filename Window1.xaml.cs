@@ -35,5 +35,10 @@ namespace MVVMENTITY
                view.Show();
             //}
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

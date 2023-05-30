@@ -70,7 +70,7 @@ namespace MVVMENTITY
             //AddDog(new Dog { DogName = "Шиба-ину" });
             //AddDog(new Dog { DogName = "Сибирский хаски" });
         }
-        public List<Dog> Dogs() // метод возвращает текущее коллекции собак
+        public List<Dog> Dogs() // метод возвращает текущее, коллекции собак
         {
             return this.db.Dogs.ToList<Dog>();
         }
@@ -108,6 +108,13 @@ namespace MVVMENTITY
             string focuswin = Window1.FocusableProperty.ToString();
             OnPropertyChanged("Win");
         }
+        // собираем список для вывода в ListBox
+        public void RunQiz()
+        {
+            MessageBox.Show("Работет комманда RunQiz");
+            this.db.Dogs.ToList<Dog>();
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;// событие для уведомления вида пользователя
         public void OnPropertyChanged([CallerMemberName] string prop = "")

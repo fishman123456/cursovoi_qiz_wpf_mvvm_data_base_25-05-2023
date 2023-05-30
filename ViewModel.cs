@@ -110,11 +110,25 @@ namespace MVVMENTITY
                 }));
                   
                
-            }
-            
-                   
+            }       
         }
+        // мои команды начало викторины
+        private Command runQizComm;
+        public Command RunQizComm
+        {
+            
+            get
+            {
+                return runQizComm ??
+                    (runQizComm = new Command(obj =>
+                    {
+                        this.model.RunQiz();
+                        OnPropertyChanged("RunQiz");
+                    }));
 
+
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
