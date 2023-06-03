@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cursovoi_qiz_wpf_mvvm_data_base_25_05_2023"
-        xmlns:local1="clr-namespace:MVVMENTITY"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800" WindowStartupLocation="CenterScreen" FontSize="10">
+        Title="Window1" Height="450" Width="1000" WindowStartupLocation="CenterScreen" FontSize="10">
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -33,9 +32,11 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Image   Stretch="Fill" Source="/water.png" Grid.ColumnSpan="10" Grid.RowSpan="12"/>
-        <ListBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="6" ItemsSource="{Binding Dogs}"
+        <Image   Stretch="Fill" Source="/water.png" Grid.ColumnSpan="12" Grid.RowSpan="12"/>
+        <ListBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="6" ItemsSource="{Binding Dogs}"
                  SelectedItem="{Binding SelectedDog}" ToolTip="Выберите ответ" Cursor="Hand">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -45,22 +46,28 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Разработчик" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="10" 
-                Command="{Binding CloseWinOne }" FontSize="18" Click="Button_Click" />
-        <Button Content="Начать викторину" Grid.ColumnSpan="3" Grid.Column="6" Grid.Row="10" 
+        <Button Content="Разработчик" Grid.ColumnSpan="4" Grid.Row="10" 
+                 FontSize="18" Click="Button_Click" Margin="83,0,0,36" Grid.RowSpan="2" />
+        <Button Content="Начать викторину" Grid.ColumnSpan="3" Grid.Column="8" Grid.Row="10" 
             Command="{Binding RunQizComm}" FontSize="18"   Grid.RowSpan="1"  Click="Button_Click_1" />
         <TextBlock Text="Список вопросов" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="3" FontSize="18" 
                     Background="LightGray" Margin="2"/>
-        <TextBlock Text="Вопрос" Grid.Row="1"  Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" 
+        <TextBlock Text="Вопрос" Grid.Row="1"  Grid.Column="8" Grid.ColumnSpan="3" FontSize="18" 
                     Background="LightGray"/>
-        <TextBlock Text="Ответ" Grid.Row="5"  Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" 
+        <TextBlock Text="Ответ" Grid.Row="5"  Grid.Column="8" Grid.ColumnSpan="3" FontSize="18" 
                     Background="LightGray"/>
         <TextBox DataContext="{Binding SelectedDog}" 
                      Text="{Binding question, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" 
-                 Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="3"  FontSize="18"/>
+                 Grid.Row="3" Grid.Column="8" Grid.ColumnSpan="3"  FontSize="18"/>
         <TextBox DataContext="{Binding SelectedDog}" IsReadOnly="True" 
                      Text="{Binding ansver, UpdateSourceTrigger=PropertyChanged}" 
-                 Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="3"  FontSize="18"  Grid.RowSpan="2" Margin="0,36,0,0"/>
-        
+                 Grid.Row="6" Grid.Column="8" Grid.ColumnSpan="3"  FontSize="18"  Grid.RowSpan="2" Margin="0,36,0,0"/>
+        <ListBox Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="6" ItemsSource="{Binding RunQizStr}"
+                 ToolTip="Выберите ответ" Cursor="Hand">
+        </ListBox>
+        <TextBox  DataContext="{Binding Test}"
+            Text="{Binding TestStringsQiz}" IsReadOnly="False" 
+            Grid.Column="3" Grid.ColumnSpan="4"  FontSize="18" Margin="83,34,0,2" Grid.RowSpan="2"/>
+
     </Grid>
 </Window>

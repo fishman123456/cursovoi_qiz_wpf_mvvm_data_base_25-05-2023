@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="cursovoi_qiz_wpf_mvvm_data_base_25_05_2023.App" Collapsed="true">
+  <Class Name="cursovoi_qiz_wpf_mvvm_data_base_25_05_2023.App">
     <Position X="5.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MVVMENTITY.Command" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="MVVMENTITY.Command" BaseTypeListCollapsed="true">
     <Position X="9.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -15,46 +15,46 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MVVMENTITY.View" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="2.5" Width="1.5" />
+  <Class Name="MVVMENTITY.View" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MVVMENTITY.ApplicationContext" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+  <Class Name="MVVMENTITY.ApplicationContext">
+    <Position X="9.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MVVMENTITY.Dog" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="2.5" Width="1.5" />
+  <Class Name="MVVMENTITY.Dog" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAIAAAgAAAgAQAAAAAAAAAgAAAAAE=</HashCode>
       <FileName>Model.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MVVMENTITY.Model" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="2.5" Width="1.5" />
+  <Class Name="MVVMENTITY.Model" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAgAAQQAAAAIAAAAAgAgAAAAAAAAAAABgAABAA=</HashCode>
+      <HashCode>AAAAABAgAAAQAAAQIAAAAAgAgAAAAAAAAAAABgAABAA=</HashCode>
       <FileName>Model.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MVVMENTITY.ViewModel" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="3.5" Width="1.5" />
+  <Class Name="MVVMENTITY.ViewModel" BaseTypeListCollapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAIAJAACIGwAAAAIgAAAAAAAgAAAAIAMAAA=</HashCode>
+      <HashCode>AAAAABAAAAIAJEACICQAAAAAgAAAAAAAgAAAAIAMAAA=</HashCode>
       <FileName>ViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MVVMENTITY.Window1" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="MVVMENTITY.Window1" BaseTypeListCollapsed="true">
     <Position X="7.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAIAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>

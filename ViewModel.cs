@@ -21,11 +21,20 @@ namespace MVVMENTITY
     {
         private Dog selectedDog; // объект собаки, что сейчас активна
         Model model; // объект модели
-        private string Win = "первая команда"; // строка для моей комманды
-
+        Test test = new Test(); // обьект класса тест
+        public Test Test { get { return test; } }
         public ViewModel() // конструктор
         {
             this.model = new Model();
+        }
+        public Test TestX
+        {
+            get { return test; }
+            set
+            {
+                test = value;
+                OnPropertyChanged("TestX");
+            }
         }
         public Dog SelectedDog
         {
@@ -36,10 +45,13 @@ namespace MVVMENTITY
                 OnPropertyChanged("SelectedDog");
             }
         }
-
         public List<Dog> Dogs
         {
             get { return this.model.Dogs(); }
+        }
+        public List<Test> Tests
+        {
+            get { return this.Tests; }
         }
 
         // команда добавления нового объекта
@@ -96,37 +108,19 @@ namespace MVVMENTITY
                   }));
             }
         }
-        // мои команды закритие окна
-        private Command closeWinOne;
-        public Command CloseWinOne 
-        {
-            get
-            {
-                return closeWinOne ??
-                    (closeWinOne = new Command(obj =>
-                {
-                    this.model.CloseWin ();
-                    OnPropertyChanged("WinOne");
-                }));
-                  
-               
-            }       
-        }
         // мои команды начало викторины
         private Command runQizComm;
         public Command RunQizComm
-        {
-            
+        { 
             get
             {
                 return runQizComm ??
                     (runQizComm = new Command(obj =>
                     {
+
                         this.model.RunQiz();
-                        OnPropertyChanged("RunQiz");
+                        OnPropertyChanged("RunQizStr");
                     }));
-
-
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;

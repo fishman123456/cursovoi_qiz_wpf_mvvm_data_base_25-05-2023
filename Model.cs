@@ -18,20 +18,38 @@ using System.Windows;
 
 namespace MVVMENTITY
 {
-
     
+
     public class ApplicationContext : DbContext// выполняет функцию соединения с бд
     {
         public DbSet<Dog> Dogs => Set<Dog>();// непосредственно коллекция объектов. Именно она будет храниться в базе данных
+       
         public ApplicationContext() => Database.EnsureCreated();// при создании этого объекта удостоверяяемся, что база данных существует и создаем, если нет
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)// говорим чем и куда сохранять наши данные
         {
             optionsBuilder.UseSqlite("Data Source=Dogs.db");
         }
     }
-
+    // делаем для теста передачи списка в listbox
+    public class Test: Dog, INotifyPropertyChanged 
+    {
+        public  string TestStringsQiz { get; set; } = "первый";
+        public Test() { }
+        public Test(string one) 
+        {
+            TestStringsQiz = one;
+        }   
+        // событие, которое уведомляет  viewModel и view о изменении
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propT = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propT));
+        }
+    }
     public class Dog : INotifyPropertyChanged // собак храним в бд и отображаем пользователю
     {
+        
         public int Id { get; set; } //  Id необходим для соханения его в бд
         public string ansver { get; set; } = "Ответ - на вопрос"; // ответ
         public  string question { get; set; } = "Вопрос - на который надо отвечать"; // вопрос
@@ -46,7 +64,7 @@ namespace MVVMENTITY
                 OnPropertyChanged("DogName");// триггеим событие - вызываем обновление во всех view событие
             }
         }
-
+       
         // событие, которое уведомляет  viewModel и view о изменении
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
@@ -56,8 +74,6 @@ namespace MVVMENTITY
         }
       
     }
-
-
 
     class Model : INotifyPropertyChanged
     {
@@ -70,6 +86,7 @@ namespace MVVMENTITY
             //AddDog(new Dog { DogName = "Шиба-ину" });
             //AddDog(new Dog { DogName = "Сибирский хаски" });
         }
+       
         public List<Dog> Dogs() // метод возвращает текущее, коллекции собак
         {
             return this.db.Dogs.ToList<Dog>();
@@ -101,18 +118,13 @@ namespace MVVMENTITY
             this.AssembleNewDogs();
             Debug.WriteLine("Объектов в базе данных: "+this.db.Dogs.ToList<Dog>().Count.ToString());
         }
-        // мои команды закрыть окно
-        public void  CloseWin()
-        {
-            MessageBox.Show("работает команда");
-            string focuswin = Window1.FocusableProperty.ToString();
-            OnPropertyChanged("Win");
-        }
         // собираем список для вывода в ListBox
         public void RunQiz()
         {
-            MessageBox.Show("Работет комманда RunQiz");
-            this.db.Dogs.ToList<Dog>();
+            string s = "самый первый";
+            Test test = new Test(s);
+           
+            OnPropertyChanged("RunQizTest");
         }
 
 
